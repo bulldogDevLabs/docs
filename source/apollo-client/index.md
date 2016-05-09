@@ -64,33 +64,9 @@ const client = new ApolloClient({
 });
 ```
 
-To automatically send cookies for the current domain (same server-client environment), the credentials option must be provided,
+<h4 id="corsSupport" title="cors support">CORS support</h3>
 
-```js
-import ApolloClient, { createNetworkInterface } from 'apollo-client';
-
-const networkInterface = createNetworkInterface('/graphql', {
-  credentials: 'same-origin',
-  headers: {
-    'X-CSRF-Token': "xyz", // Rails or Phoenix framework
-    token: 'supersecret' // Custom auth token
-  }
-});
-
-const client = new ApolloClient({ networkInterface });
-```
-
-Use the include value to send cookies in a cross-origin resource sharing (CORS) request.
-
-```js
-const networkInterface = createNetworkInterface('/graphql', {
-  credentials: 'include',
-  headers: {
-    'X-CSRF-Token': "xyz",
-    token: 'supersecret'
-  }
-});
-```
+Please reference the apollo-server/tools.md for informaiton on how to configure the apollo-server to correctly mitigate CORS issues when the apollo-client and apollo-server are running on seperate instances.
 
 <h3 id="store-rehydration" title="Loading Intial Data from Server">Loading Intial Data from Server</h3>
 
