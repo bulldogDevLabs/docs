@@ -29,7 +29,7 @@ var app = express().use('*', cors());;
 ```
 Ensure you have npm installed cors. The * value allows access from any third-party site. It should probably be updated to reflect your specific environment. Additional information https://github.com/expressjs/cors
 
-The information contained in the apolloClient re: CORS configuration did not have effect on the server.
+The information contained in the apolloClient re: CORS configuration did not effect on the server.
 
 **Function signature**
 
