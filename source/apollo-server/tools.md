@@ -18,6 +18,8 @@ var app = express();
 app.use('/graphql', apolloServer({ schema: typeDefinitionArray, graphiql: true }));
 ```
 
+<h4 id="corsSupport" title="cors support">CORS support</h3>
+
 An issue was discovered re: CORS when using the apolloClient to connect to an apolloServer running on a different instance. 
 To account for this CORS support must be configured in the express app.
 
