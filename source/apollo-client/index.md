@@ -66,7 +66,7 @@ const client = new ApolloClient({
 
 <h4 id="corsSupport" title="cors support">CORS support</h3>
 
-Please reference the apollo-server/tools.md for informaiton on how to configure the apollo-server to correctly mitigate CORS issues when the apollo-client and apollo-server are running on seperate instances.
+When attempting to setup an apollo-server and client application running on different instances, you will find http-405 errors thrown by the client. This happens when recieving the response from the server which is denying the request because of CORS. The client is working as designed. CORS support should be enabled in the apollo-server instance. Howto can be found in the [apollo-server/tools.md](/source/apollo-server/tools.md). This was encountered using the meteor-stater-kit and was confirmed from others running the apollo-server with express in node.
 
 <h3 id="store-rehydration" title="Loading Intial Data from Server">Loading Intial Data from Server</h3>
 
